@@ -1,0 +1,11 @@
+﻿@using Entity
+@model Kategori
+
+<h1>@Model.KategoriAdi</h1>
+
+@foreach (var item in Model.Bloglar)
+{
+    <a href="/BlogDetay/Index/@item.BlogID">
+        @item.Baslik
+    </a>
+}

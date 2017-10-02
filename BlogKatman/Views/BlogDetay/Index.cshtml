@@ -1,0 +1,18 @@
+﻿@using Entity
+@model Blog
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>@Model.Baslik</h1>
+
+@Model.Yazi
+
+<hr />
+
+<b>Kategori:</b> @Model.Kategorisi.KategoriAdi
+<br />
+<b>Yazar:</b> @Model.KullaniciID
+<br />
+<b>Tarih:</b> @Model.EklenmeTarihi.ToShortDateString()
+

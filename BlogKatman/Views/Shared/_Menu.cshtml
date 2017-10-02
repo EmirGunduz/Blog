@@ -1,0 +1,33 @@
+﻿
+@using Entity
+@model List<Kategori>
+
+@{
+    Layout = null;
+}
+
+<nav>
+    <ul>
+        @foreach (Kategori enUst in Model)
+        {
+            <li>
+                <a href="/KategoriDetay/Index/@enUst.KategoriID">
+                    @enUst.KategoriAdi
+                </a>
+                @if (enUst.AltKategorileri.Count != 0)
+                {
+                    <ul>
+                        @foreach (var alt in enUst.AltKategorileri)
+                    {
+                            <li>
+                                <a href="/KategoriDetay/Index/@alt.KategoriID">
+                                    @alt.KategoriAdi
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                }
+            </li>
+        }
+    </ul>
+</nav>
